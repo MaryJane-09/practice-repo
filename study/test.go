@@ -1,8 +1,9 @@
+// pointers
 package main
 
 import "fmt"
 
-func main() {
+func mai() {
 	age := 17 // variable with a value
 
 	fmt.Println(age) // printing the value
@@ -23,6 +24,14 @@ func main() {
 
 	Change(&age)
 	fmt.Println(age)
+
+	x := 5
+	p := &x         // p is a pointer, holding the ADDRESS of x
+	fmt.Println(p)  // prints something like 0xc0000140a0 (a memory address)
+	fmt.Println(*p) // prints 5 — dereference: "go look at what's at that address"
+
+	*p = 10        // dereference and WRITE through the pointer
+	fmt.Println(x) // 10 — x itself changed, because p pointed directly at x's memory
 }
 
 //using a pointer in a function
